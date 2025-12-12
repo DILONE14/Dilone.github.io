@@ -1,0 +1,100 @@
+/* Reset */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Countdown */
+#countdown {
+    font-size: 110px;
+    font-weight: bold;
+    color: #444;
+    position: absolute;
+    top: 35%;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Fireworks */
+#fireworks {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: explode 1s ease-out infinite;
+}
+
+@keyframes explode {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+/* Emojis */
+#stickers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0); opacity: 1; }
+    100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+}
+
+/* Birthday Section */
+#birthday-message {
+    display: none;
+    padding: 20px;
+    width: 90%;
+    max-width: 650px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.1);
+    animation: fadeIn 2s ease;
+}
+
+#photo-grid img {
+    width: 180px;
+    height: 180px;
+    margin: 10px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    animation: pop 1s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.3); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+.msg {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    padding: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
